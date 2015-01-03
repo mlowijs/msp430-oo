@@ -50,8 +50,12 @@ public:
 	}
 
 	void Reset() {
+		Stop();
 		*_ctl |= TACLR;
-		P1SEL &= ~(1 << 1);
+
+		DisableOutputPin(0);
+		DisableOutputPin(1);
+		DisableOutputPin(2);
 	}
 
 
@@ -59,6 +63,24 @@ public:
 		*_ctl |= (clockSource << 8) | (divider << 6);
 	}
 
+	void DisableOutputPin(unsigned char ccrNum) {
+		unsigned char pin = timerACcrOutputPin[ccrNum];
+
+		switch (timerACcrOutputPort[ccrNum]) {
+			case 1:
+				P1DIR &= ~(1 << pin);
+				P1SEL &= ~(1 << pin);
+				break;
+			case 2:
+				P2DIR &= ~(1 << pin);
+				P2SEL &= ~(1 << pin);
+				break;
+			case 3:
+				P3DIR &= ~(1 << pin);
+				P3SEL &= ~(1 << pin);
+				break;
+		}
+	}
 
 	void EnableOutputPin(unsigned char ccrNum) {
 		unsigned char pin = timerACcrOutputPin[ccrNum];
