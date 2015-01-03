@@ -1,5 +1,5 @@
-#ifndef TIMERCLOCKSOURCE_H_
-#define TIMERCLOCKSOURCE_H_
+#ifndef TIMERS_TIMERCLOCKSOURCE_H_
+#define TIMERS_TIMERCLOCKSOURCE_H_
 
 enum TimerClockSource {
 	TACLK = 0,

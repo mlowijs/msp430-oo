@@ -1,5 +1,5 @@
-#ifndef OUTPUTMODE_H_
-#define OUTPUTMODE_H_
+#ifndef TIMERS_OUTPUTMODE_H_
+#define TIMERS_OUTPUTMODE_H_
 
 enum OutputMode {
 	Output = 0,

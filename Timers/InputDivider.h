@@ -1,5 +1,5 @@
-#ifndef DIVIDER_H_
-#define DIVIDER_H_
+#ifndef TIMERS_INPUTDIVIDER_H_
+#define TIMERS_INPUTDIVIDER_H_
 
 enum InputDivider {
 	By1 = 0,
@@ -8,4 +8,4 @@ enum InputDivider {
 	By8 = 3
 };
 
-#endif /* DIVIDER_H_ */
+#endif
