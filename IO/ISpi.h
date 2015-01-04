@@ -5,9 +5,9 @@
 
 class ISpi {
 public:
-	virtual void SetupSpi(SpiMode mode, bool msbFirst) = 0;
+	virtual void SetupSpi(SpiMode mode, bool msbFirst, unsigned char clockDivider = 2) = 0;
 
-	virtual unsigned char *SpiWrite(unsigned char data[], unsigned char length) = 0;
+	virtual void SpiWrite(unsigned char writeBuffer[], unsigned char *readBuffer, unsigned char length) = 0;
 	virtual unsigned char SpiWriteByte(unsigned char data) = 0;
 };
 

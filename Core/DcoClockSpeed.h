@@ -5,19 +5,19 @@
 
 enum DcoClockSpeed {
 #ifdef CAL_DCO_1MHZ
-	Dco1MHz = 0,
+	Dco1MHz = 1,
 #endif
 
 #ifdef CAL_DCO_8MHZ
-	Dco8MHz = 1,
+	Dco8MHz = 8,
 #endif
 
 #ifdef CAL_DCO_12MHZ
-	Dco12MHz = 2,
+	Dco12MHz = 12,
 #endif
 
 #ifdef CAL_DCO_16MHZ
-	Dco16MHz = 3
+	Dco16MHz = 16
 #endif
 };
 

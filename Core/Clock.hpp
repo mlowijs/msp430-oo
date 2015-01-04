@@ -7,10 +7,14 @@
 
 class Clock {
 private:
+	static unsigned char _clockSpeedMhz;
+
 	Clock();
 
 public:
 	static void SetDcoClockSpeed(DcoClockSpeed clockSpeed) {
+		_clockSpeedMhz = clockSpeed;
+
 		switch (clockSpeed) {
 #ifdef CAL_DCO_1MHZ
 			case Dco1MHz:
@@ -41,6 +45,15 @@ public:
 #endif
 		}
 	}
+
+	static void Sleep(unsigned char ms) {
+		for (unsigned char i = 0; i < _clockSpeedMhz; i++) {
+			for (unsigned char j = 0; j < ms; j++)
+				__delay_cycles(1000);
+		}
+	}
 };
+
+unsigned char Clock::_clockSpeedMhz = 1;
 
 #endif

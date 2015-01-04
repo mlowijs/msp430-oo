@@ -5,7 +5,7 @@ enum ResistorMode {
 	PullDown = 0,
 	PullUp = 1,
 
-	Off = 2
+	ResistorOff = 2
 };
 
 #endif
