@@ -100,6 +100,10 @@ public:
 		else
 			*_out &= ~(1 << _pin);
 	}
+
+	void Toggle() {
+		*_out ^= (1 << _pin);
+	}
 };
 
 #endif

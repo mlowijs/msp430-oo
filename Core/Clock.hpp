@@ -46,14 +46,12 @@ public:
 		}
 	}
 
-	static void Sleep(unsigned char ms) {
+	static void Sleep(unsigned int ms) {
 		for (unsigned char i = 0; i < _clockSpeedMhz; i++) {
-			for (unsigned char j = 0; j < ms; j++)
+			for (unsigned int j = 0; j < ms; j++)
 				__delay_cycles(1000);
 		}
 	}
 };
-
-unsigned char Clock::_clockSpeedMhz = 1;
 
 #endif
