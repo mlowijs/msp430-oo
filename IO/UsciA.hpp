@@ -34,7 +34,7 @@ public:
 		UCA0CTL1 &= ~UCSWRST; // Release from reset mode
 	}
 
-	void SpiWrite(unsigned char writeBuffer[], unsigned char *readBuffer, unsigned char length) {
+	void SpiTransfer(unsigned char writeBuffer[], unsigned char *readBuffer, unsigned char length) {
 		for (unsigned char i = 0; i < length; i++) {
 			UCA0TXBUF = writeBuffer[i];
 
@@ -44,7 +44,7 @@ public:
 		}
 	}
 
-	unsigned char SpiWriteByte(unsigned char data) {
+	unsigned char SpiTransferByte(unsigned char data) {
 		UCA0TXBUF = data;
 
 		while (UCA0STAT & UCBUSY);
