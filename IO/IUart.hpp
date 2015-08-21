@@ -8,11 +8,10 @@
 
 class IUart {
 public:
-	unsigned char *_rxBuffer;
+	unsigned char _rxBuffer[UART_RX_BUFFER_SIZE];
 	volatile unsigned char _rxIndex;
 
 	IUart() {
-		_rxBuffer = new unsigned char[UART_RX_BUFFER_SIZE];
 		_rxIndex = 0;
 	}
 
